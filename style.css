@@ -1,27 +1,43 @@
-*{
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+* {
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
 }
-html,body{
+html{scroll-behavior: smooth !important;}
+html,
+body {
     height: 100%;
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
     font-family: "Roboto Slab", serif !important;
     font-optical-sizing: auto !important;
     font-style: normal !important;
-    font-weight:normal !important;
+    font-weight: normal !important;
+    background-color: blanchedalmond !important;
+    
 }
+
 h3 {
     font-family: "Roboto Slab", serif;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
-  }
-.active{
-   color: crimson !important;
-   display: inline-block;
-   position: relative;
+}
+
+/*Navbar*/
+.Navbar{
+    background-color: blanchedalmond;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 2px -2
+}
+.active {
+    color: crimson !important;
+    display: inline-block;
+    position: relative;
 }
 .active::after {
     content: '';
@@ -29,30 +45,178 @@ h3 {
     left: 0;
     bottom: -2px;
     width: 100%;
-    height: 2px; 
-    background-color:crimson; 
+    height: 2px;
+    background-color: crimson;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
 }
-
 .active:hover::after {
     transform: scaleX(1);
 }
-.img{
+.nav-link {
+    font-size: larger !important;
+}
+/*introduction */
+.img {
     position: relative;
     border-radius: 20px;
-    right: 0;
-    opacity: 0;
-    filter:drop-shadow(20px 10px 2px #bbb);
-    animation: image 5.0s ease-in-out forwards;
-    transition: linear 0.8s;
-    
+    filter: drop-shadow(20px 10px 2px #bbb);
+    transition: linear 0.7s;
 }
-.img:hover{
+.img:hover {
     filter: none;
 }
-@keyframes image{
-    0%{opacity:0.5;right:25%}
-    100%{opacity: 1;left:0;}
+.auto-type{
+    color: crimson;
+    font-weight: bold;
 }
+.social-meadia {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Optional: to center the icons */
+    gap: 20px; /* Optional: to add some space between the icons */
+}
+.icons{
+    filter: drop-shadow(10px 5px 2px #bbb);
+    transition: linear 0.7s;
+}
+.icons:hover{
+filter: none;
+}
+
+
+/*about page */
+.about-page{
+    padding-top: 150px;
+}
+
+.left-section{
+    padding: 10rem;
+    display: flex;
+    align-items:center;
+    justify-content: flex-start;
+    flex-direction: column;
+    line-height: 1.8rem;
+}
+.span{
+   font-size: 170%;
+   font-weight: bold;
+}
+.about-img{
+    max-height: 600px;
+    border-radius: 20px;
+    filter:drop-shadow(20px 10px 2px #bbb);
+    transition: linear 0.8s;
+}
+.about-img:hover{
+    filter:none;
+}
+/* chat section*/
+.chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.chat-icon {
+    width: 50px;
+    height: 50px;
+    background-color:crimson;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.chat-box {
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+}
+
+.chat-header {
+    background-color:crimson;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.chat-header button{
+    border:none
+}
+.chat-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chat-footer {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    display: flex;
+    background-color: crimson;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.chat-footer input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.chat-footer button {
+    background-color:transparent;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+/* media query for navbar*/
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        padding-left: 15px;
+        left: -100%; /* Hide initially off-screen */
+        width: 250px; /* Adjust width as needed */
+        padding-top: 2.5rem; /* Adjust for the top navbar height */
+        background-color:#ccc; /* Adjust background color */
+        transition: left 0.3s ease; /* Smooth slide animation */
+        z-index: 1000; /* Ensure it's above other content */
+    }
+    .navbar-collapse.show {
+        left: 0; /* Slide into view when toggled */
+    }
+    .navbar-toggler {
+        position: absolute;
+        left: 0;
+    }
+    .btn-close {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        z-index: 1100; 
+        width:40px !important;
+        height: 40px !important;
+    }
+}
+
