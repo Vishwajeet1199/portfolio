@@ -1,10 +1,15 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
 * {
     margin: 0%;
     padding: 0%;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
 }
-html{scroll-behavior: smooth !important;}
+
+html {
+    scroll-behavior: smooth !important;
+}
+
 html,
 body {
     height: 100%;
@@ -15,7 +20,7 @@ body {
     font-style: normal !important;
     font-weight: normal !important;
     background-color: blanchedalmond !important;
-    
+
 }
 
 h3 {
@@ -26,7 +31,7 @@ h3 {
 }
 
 /*Navbar*/
-.Navbar{
+.Navbar {
     background-color: blanchedalmond;
     position: fixed;
     top: 0;
@@ -34,11 +39,13 @@ h3 {
     z-index: 1000;
     box-shadow: 0 4px 2px -2
 }
+
 .active {
     color: crimson !important;
     display: inline-block;
     position: relative;
 }
+
 .active::after {
     content: '';
     position: absolute;
@@ -51,172 +58,223 @@ h3 {
     transform-origin: left;
     transition: transform 0.3s ease;
 }
+
 .active:hover::after {
     transform: scaleX(1);
 }
+
 .nav-link {
     font-size: larger !important;
 }
+
 /*introduction */
+#intro{
+    margin-top:10rem;
+}
 .img {
     position: relative;
     border-radius: 20px;
     filter: drop-shadow(20px 10px 2px #bbb);
     transition: linear 0.7s;
 }
+
 .img:hover {
     filter: none;
 }
-.auto-type{
+
+.auto-type {
     color: crimson;
     font-weight: bold;
 }
+
 .social-meadia {
     display: flex;
     flex-direction: row;
-    align-items: center; /* Optional: to center the icons */
-    gap: 20px; /* Optional: to add some space between the icons */
+    align-items: center;
+    /* Optional: to center the icons */
+    gap: 20px;
+    /* Optional: to add some space between the icons */
 }
-.icons{
+
+.icons {
     filter: drop-shadow(10px 5px 2px #bbb);
     transition: linear 0.7s;
 }
-.icons:hover{
-filter: none;
+
+.icons:hover {
+    filter: none;
 }
 
 
 /*about page */
-.about-page{
-    padding-top: 150px;
+#about-page {
+   margin-top: 26rem;
 }
 
-.left-section{
+.left-section {
     padding: 10rem;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: flex-start;
     flex-direction: column;
     line-height: 1.8rem;
 }
-.span{
-   font-size: 170%;
-   font-weight: bold;
+
+.span {
+    font-size: 170%;
+    font-weight: bold;
 }
-.about-img{
+
+.about-img {
     max-height: 600px;
     border-radius: 20px;
-    filter:drop-shadow(20px 10px 2px #bbb);
+    filter: drop-shadow(20px 10px 2px #bbb);
     transition: linear 0.8s;
 }
-.about-img:hover{
-    filter:none;
+
+.about-img:hover {
+    filter: none;
+}
+
+.skills {
+    margin-top: 7rem;
+}
+
+#skill-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#skill-container .card {
+    display: flex;
+    flex-direction: column;
+    bottom: 0;
+    width: 230px;
+    color: crimson;
+    text-align: center;
+    background-color: inherit;
+    border-radius: 20px;
+    box-shadow: 15px 8px 8px 0 rgba(0, 0, 0, 0.2), -20px 11px 20px 0 rgba(0, 0, 0, 0.19);
+    text-transform: capitalize;
 }
 /* chat section*/
-.chat-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.chat-icon {
-    width: 50px;
-    height: 50px;
-    background-color:crimson;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.chat-box {
-    width: 300px;
-    height: 400px;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    display: none;
-    flex-direction: column;
-}
-
-.chat-header {
-    background-color:crimson;
-    color: white;
-    padding: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.chat-header button{
-    border:none
-}
-.chat-body {
-    flex: 1;
-    padding: 10px;
-    overflow-y: auto;
-}
-
-.chat-footer {
-    padding: 10px;
-    border-top: 1px solid #ccc;
-    display: flex;
-    background-color: crimson;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.chat-footer input {
-    flex: 1;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.chat-footer button {
-    background-color:transparent;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin-left: 5px;
-    cursor: pointer;
-}
-/* media query for navbar*/
-
-@media (max-width: 991.98px) {
-    .navbar-collapse {
+    .chat-container {
         position: fixed;
-        top: 0;
-        bottom: 0;
-        padding-left: 15px;
-        left: -100%; /* Hide initially off-screen */
-        width: 250px; /* Adjust width as needed */
-        padding-top: 2.5rem; /* Adjust for the top navbar height */
-        background-color:#ccc; /* Adjust background color */
-        transition: left 0.3s ease; /* Smooth slide animation */
-        z-index: 1000; /* Ensure it's above other content */
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
     }
-    .navbar-collapse.show {
-        left: 0; /* Slide into view when toggled */
-    }
-    .navbar-toggler {
-        position: absolute;
-        left: 0;
-    }
-    .btn-close {
-        position: absolute;
-        top: 0.5rem;
-        right: 0.5rem;
-        z-index: 1100; 
-        width:40px !important;
-        height: 40px !important;
-    }
-}
 
+    .chat-icon {
+        width: 50px;
+        height: 50px;
+        background-color: crimson;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .chat-box {
+        width: 300px;
+        height: 400px;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        display: none;
+        flex-direction: column;
+    }
+
+    .chat-header {
+        background-color: crimson;
+        color: white;
+        padding: 10px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .chat-header button {
+        border: none
+    }
+
+    .chat-body {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+    }
+
+    .chat-footer {
+        padding: 10px;
+        border-top: 1px solid #ccc;
+        display: flex;
+        background-color: crimson;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .chat-footer input {
+        flex: 1;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .chat-footer button {
+        background-color: transparent;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+    /* media query for navbar*/
+
+    @media (max-width: 991.98px) {
+        .navbar-collapse {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            padding-left: 15px;
+            left: -100%;
+            /* Hide initially off-screen */
+            width: 250px;
+            /* Adjust width as needed */
+            padding-top: 2.5rem;
+            /* Adjust for the top navbar height */
+            background-color: #ccc;
+            /* Adjust background color */
+            transition: left 0.3s ease;
+            /* Smooth slide animation */
+            z-index: 1000;
+            /* Ensure it's above other content */
+        }
+
+        .navbar-collapse.show {
+            left: 0;
+            /* Slide into view when toggled */
+        }
+
+        .navbar-toggler {
+            position: absolute;
+            left: 0;
+        }
+
+        .btn-close {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            z-index: 1100;
+            width: 40px !important;
+            height: 40px !important;
+        }
+    }
